@@ -8,7 +8,12 @@ const port = process.env.PORT;
 
 app.get('/',(req,res) => {
     res.send("Server is working");
-})
+});
+
+//importing routs
+import userRoutes from "./routes/user.js";
+//using routes
+app.use("/api",userRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
