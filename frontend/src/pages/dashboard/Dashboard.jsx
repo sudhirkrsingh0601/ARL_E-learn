@@ -1,22 +1,16 @@
 import React from "react";
-import "./dashbord.css";
-import { CourseData } from "../../context/CourseContext";
-import CourseCard from "../../components/coursecard/CourseCard";
+import "./dashboard.css";
 
-const Dashbord = () => {
-  const { mycourse } = CourseData();
+const Dashboard = ({ user }) => {
   return (
-    <div className="student-dashboard">
-      <h2>All Enrolled Courses</h2>
+    <div className="dashboard">
+      <h1>Welcome, {user.name}!</h1>
       <div className="dashboard-content">
-        {mycourse && mycourse.length > 0 ? (
-          mycourse.map((e) => <CourseCard key={e._id} course={e} />)
-        ) : (
-          <p>No course Enrolled Yet</p>
-        )}
+        <h2>Your Learning Dashboard</h2>
+        <p>Start your learning journey by exploring our courses.</p>
       </div>
     </div>
   );
 };
 
-export default Dashbord;
+export default Dashboard;
